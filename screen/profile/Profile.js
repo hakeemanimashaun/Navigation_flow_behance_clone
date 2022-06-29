@@ -1,5 +1,4 @@
 import {
-  findNodeHandle,
   StyleSheet,
   Text,
   View,
@@ -8,16 +7,12 @@ import {
   Modal,
   TouchableHighlight,
   Dimensions,
-  Animated,
   FlatList,
 } from "react-native";
-import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import React, {
   useEffect,
   useRef,
   useState,
-  createRef,
-  forwardRef,
 } from "react";
 import Icon from "react-native-vector-icons/Fontisto";
 import MoreIcon from "react-native-vector-icons/MaterialIcons";
@@ -87,7 +82,6 @@ const headers = Object.keys(title).map((i) => ({
 }));
 
 const Profile = ({ navigation }) => {
-  const layout = useWindowDimensions();
   const [index, setIndex] = useState(3);
   const ref = useRef(null);
   const [modalVisible, setModalVisible] = useState(false);
@@ -149,14 +143,7 @@ const Profile = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <View
-        style={{
-          height: 40,
-          width: "100%",
-          backgroundColor: Colors.primary_Color,
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "row",
-        }}
+        style={styles.headerView}
       >
         {headers.map((item) => {
           return (
@@ -305,5 +292,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     backgroundColor: "blue",
     zIndex: 1,
+  },
+  headerView: {
+    height: 40,
+    width: "100%",
+    backgroundColor: Colors.primary_Color,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
   },
 });
