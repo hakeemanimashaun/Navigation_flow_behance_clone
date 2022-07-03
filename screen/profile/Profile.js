@@ -160,11 +160,13 @@ const Profile = ({ navigation }) => {
                 height: 40,
                 justifyContent: "center",
                 alignItems: "center",
+                paddingHorizontal: 5,
+                
               }}
             >
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 18,
                   color:
                     item.headermap == index
                       ? Colors.primary_Color
@@ -182,9 +184,9 @@ const Profile = ({ navigation }) => {
         ref={ref}
         data={data}
         keyExtractor={(item) => item.key}
-        renderItem={({ item }) => {
+        renderItem={({ item, key }) => {
           return (
-            <View style={{ width: width }}>
+            <View style={{ width: width }} key={key}>
               <View style={styles.flatlistView}></View>
               {item.screen}
             </View>
@@ -196,8 +198,8 @@ const Profile = ({ navigation }) => {
         bounces={false}
         initialScrollIndex={index}
         getItemLayout={(data, index) => ({
-          length: 214,
-          offset: 390 * index,
+          length: width,
+          offset: width * index,
           index,
         })}
         scrollEnabled={false}
@@ -271,7 +273,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   nameView: {
-    paddingTop: 80,
+    paddingTop: 70,
     backgroundColor: Colors.primary_Color,
   },
   nameText: {
@@ -287,6 +289,7 @@ const styles = StyleSheet.create({
   profileButton: {
     margin: 2.5,
     padding: 10,
+    marginBottom: 2.5,
   },
   flatlistView: {
     position: "absolute",

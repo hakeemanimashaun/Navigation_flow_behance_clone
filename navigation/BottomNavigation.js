@@ -47,12 +47,12 @@ export default function MyTabs() {
       <Tab.Screen
         name="Search"
         component={Search}
-        options={{tabBarInactiveTintColor: 'black', tabBarShowLabel: false}}
+        options={{tabBarInactiveTintColor: 'black', tabBarShowLabel: false,}}
       />
       <Tab.Screen
         name="Notification"
         component={Notification}
-        options={{tabBarInactiveTintColor: 'black', tabBarShowLabel: false,headerShown: false}}
+        options={{tabBarInactiveTintColor: 'black', tabBarShowLabel: false, headerShown: false,}}
       />
       <Tab.Screen
         name="Profile"

@@ -23,13 +23,13 @@ const About = () => {
     <View style={styles.container}>
       <FlatList renderItem={view} data={details} numColumns={2} />
       <View style={styles.locationView}>
-        <Text style={{fontWeight: 'bold'}}>LOCATION</Text>
-        <View style={styles.locationPinView}> 
+        <Text style={{ fontWeight: "bold", fontSize: 14, }}>LOCATION</Text>
+        <View style={styles.locationPinView}>
           <Icon name="location-pin" size={20} />
-          <Text>{location}</Text>
+          <Text style={{ fontSize: 12, }}>{location}</Text>
         </View>
       </View>
-      <Text>MEMBER SINCE: {date}</Text>
+      <Text style={styles.memberdate}>MEMBER SINCE: {date}</Text>
     </View>
   );
 };
@@ -53,21 +53,24 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   number: {
-    fontSize: 30,
+    fontSize: 25,
     marginTop: 10,
     fontWeight: "bold",
   },
   detail: {
-    fontSize: 16,
+    fontSize: 14,
     marginTop: 10,
     fontWeight: "500",
   },
-  locationView:{
-position: 'absolute',
-left: 10,
-bottom: 90
+  locationView: {
+    position: "absolute",
+    left: 10,
+    bottom: 10,
   },
-  locationPinView:{
-    flexDirection: 'row'
+  locationPinView: {
+    flexDirection: "row",
+  },
+  memberdate:{
+fontSize: 12,
   }
 });

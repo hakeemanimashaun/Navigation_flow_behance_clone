@@ -1,6 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from "react-native";
 import React, { useState } from "react";
 import { Colors } from "../../utils/INDEX";
+
+const {width, height} = Dimensions.get("screen")
 
 const Home = () => {
   const [pressed, setPressed] = useState(true);
@@ -36,7 +38,8 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
+    flex: 1,
+    //justifyContent: "center",
     alignItems: "center",
   },
   buttonContainer: {
@@ -45,24 +48,27 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 600,
+   marginBottom: 10,
+   position: 'absolute',
+   bottom: 20,
+    
   },
   button: {
-    margin: 5,
+    margin: 10,
   },
   buttonPressed: {
     backgroundColor: Colors.Secondary_Color,
     borderTopStartRadius: 25,
     borderBottomStartRadius: 25,
     borderBottomEndRadius: 0,
-    padding: 10,
+    padding: 15,
   },
   otherButtonPressed: {
     backgroundColor: Colors.Secondary_Color,
     borderTopEndRadius: 25,
     borderBottomEndRadius: 25,
     borderBottomStartRadius: 0,
-    padding: 10,
+    padding: 15,
   },
   text:{
     fontSize: 20,
